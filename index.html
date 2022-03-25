@@ -406,9 +406,8 @@
 
         <div class="section-title">
           <h2>Galería</h2>
-          <p class="contentpending">Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum
-            quidem. Sit sint
-            consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. </p>
+          <p class="contentpending">Como proyecto nacido en pandemia, hemos buscado la comunicación y la sororidad por
+            la vía virtual. La distancia no detendrá nuestro movimiento.</p>
         </div>
 
         <div class="row" data-aos="fade-up" data-aos-delay="100">
@@ -821,9 +820,8 @@
 
         <div class="section-title">
           <h2>Equipo</h2>
-          <p class="contentpending">Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum
-            quidem. Sit sint
-            consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea.</p>
+          <p>Somos un equipo multidisciplinario pero nos especializamos en establecer conexiones.
+            Estas son algunas de nuestras mejores fichas</p>
         </div>
 
         <div class="row">
@@ -911,9 +909,7 @@
 
         <div class="section-title">
           <h2>Contacto</h2>
-          <p class="contentpending">Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum
-            quidem. Sit sint
-            consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea.</p>
+          <p>Sabemos que siempre surgen dudas y queremos estar disponibles para contestarte. Contactanos aquí abajo</p>
         </div>
 
         <div class="row" data-aos="fade-up" data-aos-delay="100">
@@ -947,7 +943,7 @@
           </div>
 
           <div class="col-lg-6">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <form method="post" role="form" class="php-email-form">
               <div class="row">
                 <div class="col form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Nombre" required>
@@ -961,14 +957,15 @@
                 <input type="text" class="form-control" name="subject" id="subject" placeholder="Asunto" required>
               </div>
               <div class="form-group">
-                <textarea class="form-control" name="message" rows="5" placeholder="Mensaje" required></textarea>
+                <textarea class="form-control" name="message" id="message" rows="5" placeholder="Mensaje"
+                  required></textarea>
               </div>
               <div class="my-3">
                 <div class="loading">Enviando...</div>
-                <div class="error-message"></div>
+                <!-- <div class="error-message"></div> -->
                 <div class="sent-message">Tu mensaje ha sido enviado! Te contestaremos pronto</div>
               </div>
-              <div class="text-center"><button type="submit">Enviar</button></div>
+              <div class="text-center"><button onclick="prin()" type="button">Enviar</button></div>
             </form>
           </div>
 
@@ -1020,13 +1017,15 @@
             </ul>
           </div> -->
 
-          <!-- <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4>Join Our Newsletter</h4>
-            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>Recibe nuestro boletín</h4>
+            <p>Cero spam. Solo noticias de próximos eventos</p>
+            <form method="post">
+              <!-- Form body here -->
+              <input type="email" name="email" id="addToNewsletter"><input type="button" value="Suscribirme"
+                onclick="newslett();">
             </form>
-          </div> -->
+          </div>
 
         </div>
       </div>
