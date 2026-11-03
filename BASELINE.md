@@ -26,7 +26,7 @@ Done for a project = screenshot + README + description. No traction metrics on t
 - Dad who limits screens. Builder of small, finished things. Practical safety for normal people.
 - Themes (filters on the page): security, family and low screen, road and speed, dance and sport, community (Costa Rica), play.
 - Common thread: 80/20 safety and wellbeing, delivered rather than perfect.
-- Hero line: drafted after voice samples (see section 8).
+- Hero line: drafted from the voice rules in section 8.
 
 ## 4. Visual concept: "Night ride"
 
@@ -104,14 +104,31 @@ Analytics, contact form, consulting and course offers, a CMS, Instagram embeds, 
 
 - **Used:** Anthropic `frontend-design` (anti-slop process, tokens, self-critique) and `canvas-design` (a single design philosophy behind the scene).
 - **Suggested, enable if wanted:** `frontend-design` plugin, `audit-suite`, a blog content-strategy plugin, a YouTube transcriber.
-- **Not found / blocked:** a "personal-voice" skill (none exists in the catalog). `agent-reach` exists (Panniantong/Agent-Reach), but YouTube is blocked by this environment's network policy, as is artvee.com.
+- **Not found:** a "personal-voice" skill (none in the catalog), so voice is derived from the blog instead (section 8). YouTube and artvee.com are reachable from the local machine; `yt-dlp` / agent-reach are not installed yet.
 
-## 8. Open decisions
+## 8. Voice
 
-1. Language: English, Spanish, or a toggle.
-2. Voice: 3–5 real samples of Marcello's writing (WhatsApp messages, old posts, READMEs) to derive voice rules from.
-3. Which projects make the road, with their status and theme (draft list from the repos follows).
-4. Artvee backdrop: yes or no.
+Derived from the blog repo, **from the pre-Astro originals** (commit before "Rebuild Personal Blog: Jekyll → Astro"). The rebuild shortened or rewrote several posts and they no longer read like Marcello (see the note at the end).
+
+Rules:
+- **Open with a personal admission or a concrete scene.** "Siempre me ha molestado lavar platos." / "It's a string of characters. How can you ever lose it?"
+- **Rules first, reasons after.** A short numbered list ("Guía breve"), then "Los porqués".
+- **Concrete, slightly absurd details as humour.** "page 47 of the yellow book on your shelf", an imagined hacker talking to himself.
+- **Names his own frameworks.** "Enabler Level, a stage 2.5", "know your topic risk boundaries".
+- **Honest about unfinished ideas.** "Esto es una idea en desarrollo y suena bonito en papel, espero que se me pegue."
+- **Ends with a question to the reader or a commitment.** "¿Está usted organizado?"
+- **Costa Rican Spanish:** *usted* in guides, colloquial when personal ("sacaron pecho", "les late"). Flags loanwords honestly: "trigger (ninguna traducción al español me convence)".
+- **Avoid:** generic motivational closers ("force multiplier", "the returns are incomparable"), symmetric "La Ley / La Realidad / Mi Perspectiva" scaffolding. Those come from the rewrite, not from Marcello.
+
+Language rule, his own words (2023): *"Normalmente escribo en inglés … pero como este tema aplica solo para Costa Rica, lo haré en español."* Applied to the home page: English shell, and each project described in the language of its audience (Costa Rican projects in Spanish). No toggle.
+
+Note: the Astro rebuild (May 2026) cut or rewrote at least four posts. `como-ando-en-bicicleta` went from about 2,490 words to 350 and lost the whole riding guide, `the-enabler-level` now argues a different idea than the original, and `privilegio-lavar-mis-platos` and `rodar-es-facil-organizarse-tambien` lost their endings. The originals are recoverable from git.
+
+## 9. Open decisions
+
+1. Which projects make the road, with their status and theme (draft list below). The blog's 2026 "seguridad digital" series (accounts, protests, social engineering, hacked) fills the security theme.
+2. Artvee backdrop: yes or no.
+3. Confirm the language rule above.
 
 ### Draft project list
 
@@ -132,4 +149,4 @@ Analytics, contact form, consulting and course offers, a CMS, Instagram embeds, 
 | como-reciclo | community | 2024 |
 | dotfiles | tools | 2023 |
 | gitlab-to-gitea | tools | 2018 |
-| security: none yet | security | — |
+| seguridad digital series (blog) | security | 2026 |
