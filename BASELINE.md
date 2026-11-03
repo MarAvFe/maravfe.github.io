@@ -78,7 +78,7 @@ Why it fits: motorcycles and road navigation are part of the identity, the timel
 +----------------------------------------------+
 ```
 
-Projects are rows along a vertical road, not a grid of identical cards. Text is left aligned. Expanding a row shows the screenshot, description and links.
+Three featured projects sit above the road (see section 10.8). The rest are rows along a vertical road, not a grid of identical cards. Text is left aligned. Expanding a row shows the screenshot, description and links.
 
 ### Principles (anti-slop review)
 
@@ -150,3 +150,26 @@ Note: the Astro rebuild (May 2026) cut or rewrote at least four posts. `como-and
 | dotfiles | tools | 2023 |
 | gitlab-to-gitea | tools | 2018 |
 | seguridad digital series (blog) | security | 2026 |
+
+## 10. Rebrand research (YouTube, 2026-11-03)
+
+Sources: Caleb Ralston, *How to Rebrand Yourself Online (Full Course)* (F0-yC1gVElA); Leila Hormozi, *How to Rebrand Yourself* (IcA7xvkAcpk); TED, *5 Steps to Building a Personal Brand* (ozMCb0wOnMU); Adama Lorna, *Personal brand with multiple passions* (YgBUOXwV3Qc); UnordinaryMind, *The M-Shaped Future* (knVaCNiH-8I); Vanessa Lau, *Build a personal brand, not a social media account* (71oNb0HPf5E); Kenny Gunderman, *Developer Portfolio Do's and Don'ts* (nlSgxeT2_dc).
+
+What applies here:
+
+1. **This is positioning, not a rebrand.** Ralston: a rebrand means replacing associations an audience already holds. "No one knows what I stand for" is a positioning problem. There is no audience holding the old "Seguridad Digital consulting" association, and no revenue depends on it, so the switch costs nothing. Just replace the page.
+2. **A brand is a lagging indicator of behaviour** (Hormozi, 12–18 months), and "if it needs willpower to maintain, it's a costume." The tracker works because it shows what Marcello already does, not what he plans to be. Infovia's 9 users and then silence is normal at this stage: "real brands go unnoticed until they're undeniable."
+3. **Interest stacking** (Ralston, Lau). Don't make separate content per hobby. Weave the hobbies into the core work: explain a security idea through a motorcycle analogy, and let dance and fatherhood show up on the page. Lau: shared interests are what let an audience follow you through a pivot.
+4. **Model: "focused", not "exploratory"** (Lorna). Exploratory (many threads, no story) splits energy and never compounds; that was the 2022 attempt. Focused = 1–2 core themes, with the rest woven in. Her formula, filled in for Marcello:
+   - Skill: software engineering, practical security.
+   - Passion: family and low screen time, the road.
+   - Energy: calm, direct, honest about unfinished things.
+   - Values: *respeto y presencia* (his own words), practical safety over perfection, community organisation.
+5. **Seasons, not a single niche** (M-shaped). Deepen one pillar for 6–18 months, then "graduate" on purpose. The README-and-close habit is already this, and the tracker is the external memory that makes it work.
+6. **Common enemy = a concept, never a person** (Ralston). Candidate: *perfect security advice nobody follows*. That is the 80/20 position stated as a contrarian take.
+7. **Legends and lore = failures with a takeaway.** Infovia (500-person group, 9 users, one day) is a story worth telling on the blog, not something to hide.
+8. **Portfolio rule** (Gunderman): 2–3 thorough projects beat 20 small ones. Reconciling this with the tracker: **3 featured projects at the top, the full road log below.** One-day experiments stay in the log, not the feature row.
+9. **Platforms:** a solo creator gets one primary platform and one secondary (Ralston; TED agrees). Here: the site and blog are the primary; WhatsApp sharing is the secondary.
+
+Draft brand statement (to be rewritten by Marcello in his own words):
+> I'm Marcello, a dad in Costa Rica who builds small, finished tools. Most of them are about staying reasonably safe without being perfect: online, on the road, and at home. The rest are about dancing.
