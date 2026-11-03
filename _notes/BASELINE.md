@@ -41,6 +41,8 @@ Why it fits: motorcycles and road navigation are part of the identity, the timel
 
 ### Tokens (NES palette values)
 
+Superseded in v1: the palette now comes from the dithered Klever backdrop. Source of truth is `assets/night.css`.
+
 | Name | Hex | Use |
 |---|---|---|
 | Midnight | `#0000BC` | sky top, page background in dark bands |

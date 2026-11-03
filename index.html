@@ -1,62 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" type="image/x-icon" href="favicon.png">
-    <title>Marcello Ávila | Seguridad Digital</title>
-    <link rel="icon" href="./assets/img/bg.jpg" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-601BW3FDNS"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-601BW3FDNS');
-    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Marcello Ávila</title>
+  <meta name="description" content="A dad in Costa Rica who builds small, finished things. Most of them are about being reasonably safe: online, on the road and at home.">
+  <link rel="icon" href="favicon.png">
+  <link rel="preload" href="assets/fonts/silkscreen-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/night.css">
+  <script src="assets/night.js" defer></script>
 </head>
-
 <body>
-    <img class="logo" src="assets/img/pfp.jpg" alt="profile picture">
-    <h1>Seguridad Digital</h1>
-    <h2>con Marcello Ávila</h2>
-    <div class="links">
-
-        <div class="links__item">
-            <a class="links__item links__item--product" href="https://calendly.com/marcelloavila/seguridaddigital"
-                target="_blank">Agendar sesión individual</a>
-        </div>
-        <div class="links__item">
-            <a class="links__item links__item--product" href="#">Curso "Seguridad Digital en sus
-                manos" [PRONTO]</a>
-        </div>
-        <div class="links__item">
-            <a class="links__item links__item--product" href="https://docs.google.com/document/d/1pqhdP8sSzGeMROEBtgMNQO-6RTv0Tc4ei_A_7CtmOMs/edit?usp=sharing">GRATIS: 10 Pasos para Proteger su Negocio en Línea</a>
-        </div>
-        <br>
-        <div class="channels">
-            <!--<a class="channels__item" href="https://marcelloavila.com/portfolio" target="_blank"><img
-                    src="assets/img/website.png" alt="website" width=40 height=40></a>-->
-            <a class="channels__item" href="https://blog.marcelloavila.com/" target="_blank"><img
-                    src="assets/img/medium.png" alt="blog" width=40 height=40></a>
-            <a class="channels__item" href="https://www.linkedin.com/in/marcello-avila/" target="_blank"><img
-                    src="assets/img/ln.png" alt="linkedin" width=40 height=40></a>
-            <a class="channels__item" href="https://www.instagram.com/maravfe/" target="_blank"><img
-                    src="assets/img/ig.png" alt="instagram" width=40 height=40></a>
-            <!-- <a class="channels__item" href="https://www.facebook.com/Myedusolve-414540579106990" target="_blank"><img
-                    src="assets/img/icon/facebook.png" alt="facebook" width=40 height=40></a>
-            <a class="channels__item" href="https://twitter.com/myedusolve" target="_blank"><img
-                    src="assets/img/icon/twitter.png" alt="twitter" width=40 height=40></a>
-            <a class="channels__item" href="https://www.youtube.com/channel/UC8EZqWiSgCdmQsiFEEPER6Q"
-                target="_blank"><img src="assets/img/icon/youtube.png" alt="youtube" width=40 height=40></a>-->
-        </div>
+  <header class="hero">
+    <div class="scene">
+      <img src="assets/img/klever-forest-sunset.png" width="256" height="144"
+           alt="A pine forest at sunset, the low sun glowing orange between the trunks, redrawn in 8-bit pixels.">
+      <canvas id="road" width="256" height="144" aria-hidden="true"></canvas>
     </div>
-</body>
-<!-- Template by https://links.myedusolve.com/ | https://medium.com/myedusolve/how-to-code-your-own-linktree-with-html-css-3189c354e1a3-->
+    <div class="dialog">
+      <h1>Marcello Ávila</h1>
+      <p>I'm a dad in Costa Rica who builds small, finished things. Most of them are about being reasonably safe, not perfectly safe: online, on the road and at home. The rest are about dancing.</p>
+      <nav aria-label="Elsewhere">
+        <a href="https://blog.marcelloavila.com/">Blog</a>
+        <a href="https://github.com/MarAvFe">GitHub</a>
+        <a href="https://www.linkedin.com/in/marcello-avila/">LinkedIn</a>
+      </nav>
+    </div>
+  </header>
 
+  <main>
+    <section aria-labelledby="featured-title">
+      <h2 id="featured-title">Three to start with</h2>
+      <ul class="featured" id="featured"></ul>
+    </section>
+
+    <section aria-labelledby="road-title">
+      <h2 id="road-title">Everything, newest first</h2>
+      <div class="filters" id="filters" role="group" aria-label="Show projects about"></div>
+      <ol class="road" id="log"></ol>
+      <noscript><p>The project list needs JavaScript. Everything is also on <a href="https://github.com/MarAvFe">GitHub</a>.</p></noscript>
+    </section>
+  </main>
+
+  <footer>
+    <p>University work and older experiments are on <a id="archive" href="https://github.com/MarAvFe?tab=repositories">GitHub</a>.</p>
+    <p>Backdrop: Julius von Klever, <cite>Forest Sunset</cite> (1912), public domain, found on <a href="https://artvee.com/dl/forest-sunset/">Artvee</a> and redrawn with the NES palette.</p>
+  </footer>
+</body>
 </html>

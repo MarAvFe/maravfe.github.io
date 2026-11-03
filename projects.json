@@ -1,0 +1,144 @@
+{
+  "themes": {
+    "security": "Security",
+    "family": "Family and low screen",
+    "road": "Road and speed",
+    "dance": "Dance and sport",
+    "community": "Costa Rica",
+    "play": "Play",
+    "tools": "Tools"
+  },
+  "projects": [
+    {
+      "name": "Seguridad digital",
+      "line": "Guías cortas para cuidar sus cuentas, qué hacer si lo hackearon y cómo ir seguro a una protesta.",
+      "lang": "es",
+      "theme": "security",
+      "status": "shipped",
+      "year": 2026,
+      "link": "https://blog.marcelloavila.com/blog/2026-08-05-10-pasos-para-proteger-sus-cuentas-en-linea/",
+      "featured": true
+    },
+    {
+      "name": "rail-shooter",
+      "line": "A calm, wordless flying game for a 4-year-old. You can't fail and you don't need to read.",
+      "theme": "family",
+      "status": "building",
+      "year": 2026,
+      "repo": "https://github.com/MarAvFe/rail-shooter",
+      "featured": true
+    },
+    {
+      "name": "Hay Baldazo (infovia)",
+      "line": "Reportes de lluvia hechos por motociclistas en San José. Reporte su zona y vea el mapa.",
+      "lang": "es",
+      "theme": "road",
+      "status": "paused",
+      "year": 2026,
+      "repo": "https://github.com/MarAvFe/infovia",
+      "featured": true
+    },
+    {
+      "name": "Enseñalsa",
+      "line": "Learn the salsa basic one count at a time, with a little 3D dancer you can slow down.",
+      "theme": "dance",
+      "status": "building",
+      "year": 2026,
+      "repo": "https://github.com/MarAvFe/ensenalsa"
+    },
+    {
+      "name": "curious-for-speed",
+      "line": "An arcade city racing game.",
+      "theme": "road",
+      "status": "building",
+      "year": 2026,
+      "repo": "https://github.com/MarAvFe/curious-for-speed"
+    },
+    {
+      "name": "garmin-car-drive",
+      "line": "Record car drives on a Garmin watch without messing up your training stats.",
+      "theme": "road",
+      "status": "shipped",
+      "year": 2026,
+      "repo": "https://github.com/MarAvFe/garmin-car-drive"
+    },
+    {
+      "name": "garmin-bedtime-face",
+      "line": "A watch face that colours the clock so I can see at a glance how close bedtime is for my kid.",
+      "theme": "family",
+      "status": "shipped",
+      "year": 2026,
+      "repo": "https://github.com/MarAvFe/garmin-bedtime-face"
+    },
+    {
+      "name": "slimstream",
+      "line": "Keeps phone photos and videos from filling my Google storage: compress, move to Mega, delete originals only when it's provably safe.",
+      "theme": "tools",
+      "status": "shipped",
+      "year": 2026,
+      "repo": "https://github.com/MarAvFe/slimstream"
+    },
+    {
+      "name": "Tejido Social",
+      "line": "Un framework abierto para organizarse en comunidad, hilo a hilo.",
+      "lang": "es",
+      "theme": "community",
+      "status": "building",
+      "year": 2026,
+      "repo": "https://github.com/MarAvFe/tejido-social-cr",
+      "link": "https://tejidosocialcr.netlify.app/"
+    },
+    {
+      "name": "processing-sketches",
+      "line": "Small generative drawings, made for the fun of it.",
+      "theme": "play",
+      "status": "building",
+      "year": 2026,
+      "repo": "https://github.com/MarAvFe/processing-sketches"
+    },
+    {
+      "name": "Palestina x Costa Rica",
+      "line": "Recursos del movimiento Palestina x Costa Rica.",
+      "lang": "es",
+      "theme": "community",
+      "status": "shipped",
+      "year": 2025,
+      "repo": "https://github.com/MarAvFe/palestina-costa-rica"
+    },
+    {
+      "name": "tap-n-watch",
+      "line": "An offline media player for kids: tap an RFID card on a Raspberry Pi and a video plays. No screen to scroll.",
+      "theme": "family",
+      "status": "idea",
+      "year": 2025,
+      "repo": "https://github.com/MarAvFe/tap-n-watch"
+    },
+    {
+      "name": "Cómo reciclo",
+      "line": "Una página para aprender a reciclar bien en Costa Rica.",
+      "lang": "es",
+      "theme": "community",
+      "status": "shipped",
+      "year": 2024,
+      "repo": "https://github.com/MarAvFe/como-reciclo",
+      "link": "https://marcelloavila.com/como-reciclo/"
+    },
+    {
+      "name": "dotfiles",
+      "line": "My terminal and editor setup, ready to reuse.",
+      "theme": "tools",
+      "status": "shipped",
+      "year": 2023,
+      "repo": "https://github.com/MarAvFe/dotfiles"
+    },
+    {
+      "name": "gitlab-to-gitea",
+      "line": "Moves repositories and their data from GitLab to Gitea.",
+      "theme": "tools",
+      "status": "shipped",
+      "year": 2018,
+      "repo": "https://github.com/MarAvFe/gitlab-to-gitea"
+    }
+  ],
+  "archive": "https://github.com/MarAvFe?tab=repositories"
+}

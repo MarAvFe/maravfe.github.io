@@ -1,0 +1,101 @@
+/* Night ride. Every colour is from the NES palette; most come from the dithered Klever backdrop. */
+@font-face { font-family: "Silkscreen"; src: url("fonts/silkscreen-400.woff2") format("woff2"); font-display: swap; }
+@font-face { font-family: "Atkinson Hyperlegible"; src: url("fonts/atkinson-400.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Atkinson Hyperlegible"; src: url("fonts/atkinson-400i.woff2") format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: "Atkinson Hyperlegible"; src: url("fonts/atkinson-700.woff2") format("woff2"); font-weight: 700; font-display: swap; }
+
+:root {
+  --night: #000000;
+  --bark: #503000;
+  --pine: #004058;
+  --ember: #E45C10;
+  --sun: #F8B800;
+  --parchment: #F0D0B0;
+  --magenta: #E40058;
+  --leaf: #00A800;
+  --ash: #787878;
+  --px: 4px; /* one "pixel" of UI chrome */
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--night);
+  color: var(--parchment);
+  font: 400 1.0625rem/1.6 "Atkinson Hyperlegible", system-ui, sans-serif;
+}
+
+a { color: var(--sun); text-underline-offset: 0.2em; }
+a:hover { color: var(--parchment); }
+:focus-visible { outline: var(--px) solid var(--sun); outline-offset: var(--px); }
+
+h1, h2 { font-family: "Silkscreen", monospace; font-weight: 400; line-height: 1.1; }
+h2 { font-size: clamp(1.25rem, 3vw, 1.75rem); color: var(--sun); margin: 0 0 1.25rem; }
+
+/* Hero: painting + canvas road share one 256x144 pixel grid */
+.scene { position: relative; max-width: 1280px; margin: 0 auto; }
+.scene img, .scene canvas { display: block; width: 100%; height: auto; image-rendering: pixelated; }
+.scene canvas { position: absolute; inset: 0; height: 100%; }
+
+/* 8-bit dialog box: black window, double pixel border */
+.dialog {
+  position: relative;
+  max-width: 40rem;
+  margin: -1.5rem auto 0; /* only kiss the scene: the road and rider stay visible */
+  padding: 1.5rem 1.75rem;
+  background: var(--night);
+  border: var(--px) solid var(--parchment);
+  box-shadow: 0 0 0 var(--px) var(--night), 0 0 0 calc(2 * var(--px)) var(--ember);
+}
+.dialog h1 { font-size: clamp(1.75rem, 6vw, 3rem); margin: 0 0 0.75rem; color: var(--sun); }
+.dialog p { margin: 0 0 1rem; max-width: 60ch; }
+.dialog nav { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+
+main, footer { max-width: 52rem; margin: 0 auto; padding: 0 1.25rem; }
+main section { margin-top: 4.5rem; }
+
+/* Featured: three stops, not a card grid */
+.featured { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); }
+.featured li { border-top: var(--px) solid var(--ember); padding-top: 1rem; }
+.featured .sprite { width: 48px; height: 48px; image-rendering: pixelated; display: block; margin-bottom: 0.75rem; }
+.featured h3 { font-size: 1.25rem; margin: 0 0 0.25rem; }
+
+/* The road: a vertical lane with a dashed centre line; years are kilometre posts */
+.road { list-style: none; margin: 0; padding: 0 0 0 3.5rem; position: relative; }
+.road::before {
+  content: ""; position: absolute; left: 0.75rem; top: 0; bottom: 0; width: 1.5rem;
+  background: linear-gradient(var(--sun) 50%, transparent 0) center / var(--px) 24px repeat-y, var(--bark);
+}
+.post {
+  position: relative; margin: 2.5rem 0 1rem -3.5rem;
+  font-family: "Silkscreen", monospace; font-size: 1rem;
+  display: inline-block; padding: 0.25rem 0.5rem;
+  background: var(--leaf); color: var(--night);
+}
+.stop { margin: 0 0 1.5rem; }
+.stop h3 { font-size: 1.125rem; margin: 0; display: inline; }
+.stop p, .featured p { margin: 0.25rem 0; max-width: 62ch; }
+.links { display: flex; gap: 1rem; font-size: 0.9375rem; }
+.theme { color: #BCBCBC; font-size: 0.9375rem; }
+
+/* Status: word + colour, never colour alone */
+.status { font-size: 0.8125rem; padding: 0 0.4rem; margin-left: 0.5rem; vertical-align: 0.15em; border: 2px solid; }
+.status.shipped { color: var(--night); background: var(--leaf); border-color: var(--leaf); }
+.status.building { color: var(--night); background: var(--sun); border-color: var(--sun); }
+.status.paused { color: var(--parchment); border-color: var(--ash); }
+.status.idea { color: var(--parchment); border-style: dashed; border-color: var(--ash); }
+
+.filters { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; }
+.filters button {
+  font: inherit; font-size: 0.9375rem; cursor: pointer;
+  color: var(--parchment); background: var(--night);
+  border: 2px solid var(--pine); padding: 0.25rem 0.75rem;
+}
+.filters button[aria-pressed="true"] { background: var(--pine); border-color: var(--sun); }
+
+footer { margin-top: 5rem; padding-bottom: 3rem; color: #BCBCBC; font-size: 0.9375rem; border-top: var(--px) dashed var(--bark); padding-top: 1.5rem; }
+
+@media (max-width: 640px) {
+  .dialog { margin: 0 0.75rem; padding: 1.25rem; }
+}

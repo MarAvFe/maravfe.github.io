@@ -1,0 +1,26 @@
+<!doctype html><title>night ride check</title>
+<!-- Serve the repo root (python3 -m http.server) and open /_tools/check.html. Results replace this page. -->
+<iframe id="f" src="../index.html" width="800" height="600"></iframe>
+<script>
+f.onload = () => setTimeout(() => {
+  const d = f.contentDocument, r = [];
+  const ok = (c, m) => r.push((c ? "PASS " : "FAIL ") + m);
+  const stops = [...d.querySelectorAll("#log .stop")];
+  ok(stops.length > 0, stops.length + " stops rendered");
+  ok(d.querySelectorAll("#featured li").length === 3, "3 featured");
+  const btn = d.querySelector('#filters [data-theme="dance"]');
+  btn.click();
+  const vis = stops.filter(s => !s.hidden);
+  ok(vis.length > 0 && vis.every(s => s.dataset.theme === "dance"), "dance filter shows only dance stops");
+  const posts = [...d.querySelectorAll("#log .post")];
+  ok(posts.every(p => {
+    let n = p.nextElementSibling, any = false;
+    while (n && !n.classList.contains("post")) { any ||= !n.hidden; n = n.nextElementSibling; }
+    return p.hidden === !any;
+  }), "a km post shows only when a stop under it shows");
+  d.querySelector('#filters [data-theme="all"]').click();
+  ok(stops.every(s => !s.hidden) && posts.every(p => !p.hidden), "All restores everything");
+  ok(d.querySelectorAll('#filters [aria-pressed="true"]').length === 1, "exactly one pressed filter");
+  document.body.textContent = r.join("\n");
+}, 800);
+</script>
