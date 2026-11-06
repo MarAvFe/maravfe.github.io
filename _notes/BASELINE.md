@@ -173,5 +173,5 @@ What applies here:
 8. **Portfolio rule** (Gunderman): 2–3 thorough projects beat 20 small ones. Reconciling this with the tracker: **3 featured projects at the top, the full road log below.** One-day experiments stay in the log, not the feature row.
 9. **Platforms:** a solo creator gets one primary platform and one secondary (Ralston; TED agrees). Here: the site and blog are the primary; WhatsApp sharing is the secondary.
 
-Draft brand statement (to be rewritten by Marcello in his own words):
-> I'm Marcello, a dad in Costa Rica who builds small, finished tools. Most of them are about staying reasonably safe without being perfect: online, on the road, and at home. The rest are about dancing.
+Brand statement, in Marcello's own words (2026-11-06):
+> I build for daily tasks through small projects. I like bikes, cybersecurity and spending time with my kid.

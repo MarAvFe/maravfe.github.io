@@ -14,7 +14,7 @@ Last updated 2026-11-06. v1 is merged into `master` and pushed.
 - [ ] **Statuses are my guesses** (idea / building / shipped / paused). Correct them in `projects.json`. The ones I'm least sure about: rail-shooter, curious-for-speed, garmin-*, tap-n-watch.
 - [ ] **Left out on purpose: `busca-maes-bot`.** It looks people up by name and plate. That's public data in CR, but listing it on a privacy-minded homepage sends a mixed signal. Add it back if you disagree.
 - [ ] **Palestina x Costa Rica** is listed under Costa Rica. Keep it or drop it, your call.
-- [x] **Brand statement.** Marcello's two sentences added to the end of the draft in `index.html` on 2026-11-06.
+- [x] **Brand statement.** Replaced in `index.html` with Marcello's own words on 2026-11-06.
 
 ## Broken or missing
 
@@ -26,7 +26,7 @@ Last updated 2026-11-06. v1 is merged into `master` and pushed.
 
 - [x] Delete `beep/` (except `beep/simaplaDigital/`), `tango/`, `red/`, `imagenes-matilde/` and `Readme.txt`.
 - [ ] `beep/simaplaDigital/` stays online with no link from the site, until Marcello is ready to wipe it.
-- [ ] Close the 11 Dependabot PRs that target `beep/` and `tango/`.
+- [x] Close the 11 Dependabot PRs that target `beep/` and `tango/`.
 - [ ] Remove unused files from the old link page: `assets/css/style.css`, and `assets/img/{bg.jpg,ig.png,ln.png,medium.png,website.png}`. Keep `pfp.jpg` if you want a photo later.
 - [ ] Old link-page extras are gone from the new page: Calendly, the "PRONTO" course, Instagram and Google Analytics. Add back anything you still want.
 
