@@ -15,21 +15,35 @@ const SPRITES = {
 };
 const THEME_COLOUR = { security: NES.y, family: NES.m, road: NES.o, dance: NES.m, community: NES.l, play: NES.y, tools: NES.p };
 
-// Rider seen from behind: helmet, jacket, tail light, tyre.
-const RIDER = [
-  "......kkkk......",
-  ".....kyyyyk.....",
-  ".....kyyyyk.....",
-  "......kkkk......",
-  "....kooooook....",
-  "...kooooooook...",
-  "..kkoooooookk...",
-  ".kk.koooook.kk..",
-  "....kkkkkkkk....",
-  ".....kmmmmk.....",
-  "......gggg......",
-  "......gggg......",
-  "......gggg......",
+// Rider on a naked bike, side view, facing right: blue tank, bare engine, stub tail,
+// gold forks, short low exhaust. Magenta helmet with a cyan visor, white jacket with a
+// dark arm stripe.
+// A and B are the two spoke positions.
+const BIKE_COLOURS = { k: NES.k, y: NES.y, m: NES.m, p: NES.p, g: NES.g, s: "#BCBCBC", w: "#FCFCFC", r: "#F83800", d: "#404040", b: "#0058F8", c: "#3CBCFC" };
+const BIKE = [
+  "................mmmmm...............",
+  "...............mmmmmmm..............",
+  "...............mmmcccc..............",
+  "...............mmmmmmm..............",
+  "................mmmmm...............",
+  "................wwwwww..............",
+  "...............swwwwwwwwwww.........",
+  "..rr...........swwwwwwdddddw........",
+  "..rbbb.........swwwww.bbbb.wppss....",
+  "....bbbb.......swwww.bbbbbb.yy......",
+  "......bbbbbddddswwdddbccbbbbyywww...",
+  "....gggggdddddddddddddbbbbbbbgyywww.",
+  "...ggcckgcgg...gggdddbbbbbbgckyygw..",
+  "..ggckkAkkcgg.ggsdsddsdsdsggkAkyygg.",
+  "..gckBkAkBkcggg.dsdddsdsdsdBkAkyycg.",
+  ".ggckkBsBkkggg..sdsddsdsdsdkBsBkyygg",
+  ".ggkAAsssggkgg..dsddgdsdsdAAsssAAkgg",
+  ".ggckkBsBkkcgg..ksggggsdkckkBsBkkcgg",
+  "..gckBkAkBkcssssssskkkk.gckBkAkBkcg.",
+  "..ggckkAkkcgwsssss......ggckkAkkcgg.",
+  "...ggcckccgg.............ggcckccgg..",
+  "....ggggggg...............ggggggg...",
+  "......ggg...................ggg.....",
 ];
 
 function drawMap(ctx, map, x, y, colours) {
@@ -46,36 +60,39 @@ function spriteURL(theme) {
 }
 
 // --- Road -------------------------------------------------------------------
-// Vanishing point sits under the painted sun; the road comes out of the forest floor.
+// A street running left to right. The ground slides left under the bike, and the
+// cross lines fan out from a vanishing point under the painted sun.
 function road(canvas) {
   const ctx = canvas.getContext("2d");
-  const W = canvas.width, H = canvas.height, VX = 131, HY = 98, HALF = 92;
+  const W = canvas.width, H = canvas.height, VX = 131, HY = 106, GRID_TOP = 115, NEAR_LINE = 132, LANE_Y = 119, SPACING = 70;
   const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const depth = y => (y - HY) / (H - HY); // 0 at the far kerb, 1 at the bottom edge
   let phase = 0, frame = 0, last = 0;
 
   function draw() {
     ctx.clearRect(0, 0, W, H);
-    for (let y = HY; y < H; y++) {
-      const t = (y - HY) / (H - HY); // 0 at horizon, 1 at the bottom edge
-      const half = Math.round(t * HALF);
-      ctx.fillStyle = NES.k;
-      ctx.fillRect(VX - half, y, half * 2 + 1, 1);
-      ctx.fillStyle = NES.o;
-      ctx.fillRect(VX - half, y, 1, 1);
-      ctx.fillRect(VX + half, y, 1, 1);
-      ctx.fillStyle = NES.m;
-      for (const lane of [-2 / 3, -1 / 3, 0, 1 / 3, 2 / 3]) ctx.fillRect(Math.round(VX + lane * half), y, 1, 1);
-    }
-    // Cross lines: evenly spaced in depth, so they bunch up near the horizon.
+    ctx.fillStyle = NES.k;
+    ctx.fillRect(0, HY, W, H - HY);
+    ctx.fillStyle = NES.o;
+    ctx.fillRect(0, HY, W, 1);
     ctx.fillStyle = NES.m;
-    for (let n = 0; n < 7; n++) { // fewer far lines, or the horizon smears into a block
-      const z = n + 1 - phase;
-      const y = Math.round(HY + (H - HY) / z);
-      if (y <= HY || y >= H) continue;
-      const half = Math.round(((y - HY) / (H - HY)) * HALF);
-      ctx.fillRect(VX - half, y, half * 2 + 1, 1);
+    ctx.fillRect(0, GRID_TOP, W, 1);
+    ctx.fillRect(0, NEAR_LINE, W, 1);
+    // Cross lines stop at GRID_TOP: any closer to the horizon they smear into a block.
+    for (let n = -12; n <= 12; n++) {
+      for (let y = GRID_TOP; y < H; y++) {
+        const a = Math.round(VX + (n - phase) * SPACING * depth(y));
+        const b = Math.round(VX + (n - phase) * SPACING * depth(y + 1));
+        ctx.fillRect(Math.min(a, b), y, Math.abs(b - a) + 1, 1); // joined, so shallow lines don't break into dots
+      }
     }
-    drawMap(ctx, RIDER, VX - 8, H - 34 - (frame % 8 < 4 ? 0 : 1), NES); // clear of the dialog box
+    // Dashed lane line, moving at the speed of the ground at its depth.
+    const dash = SPACING * depth(LANE_Y);
+    ctx.fillStyle = NES.y;
+    for (let n = -6; n <= 6; n++) ctx.fillRect(Math.round(VX + (n - phase) * dash), LANE_Y, Math.round(dash / 2), 1);
+    const spin = frame % 4 < 2;
+    drawMap(ctx, BIKE, VX - 18, H - 40 - (frame % 8 < 4 ? 0 : 1), // clear of the dialog box
+      { ...BIKE_COLOURS, A: spin ? "#404040" : NES.k, B: spin ? NES.k : "#404040" });
   }
 
   function tick(t) {
