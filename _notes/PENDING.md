@@ -1,6 +1,6 @@
 # Pending
 
-Last updated 2026-11-03. Everything is local on branch `ccr-6992524f-s38sak`. Nothing is pushed or live.
+Last updated 2026-11-06. v1 is merged into `master` and pushed.
 
 ## Review tonight
 
@@ -14,7 +14,7 @@ Last updated 2026-11-03. Everything is local on branch `ccr-6992524f-s38sak`. No
 - [ ] **Statuses are my guesses** (idea / building / shipped / paused). Correct them in `projects.json`. The ones I'm least sure about: rail-shooter, curious-for-speed, garmin-*, tap-n-watch.
 - [ ] **Left out on purpose: `busca-maes-bot`.** It looks people up by name and plate. That's public data in CR, but listing it on a privacy-minded homepage sends a mixed signal. Add it back if you disagree.
 - [ ] **Palestina x Costa Rica** is listed under Costa Rica. Keep it or drop it, your call.
-- [ ] **Brand statement.** I polished it lightly, and it's in `index.html`. Rewrite it whenever you like.
+- [x] **Brand statement.** Marcello's two sentences added to the end of the draft in `index.html` on 2026-11-06.
 
 ## Broken or missing
 
@@ -24,15 +24,15 @@ Last updated 2026-11-03. Everything is local on branch `ccr-6992524f-s38sak`. No
 
 ## Cleanup (do on desktop, after merge)
 
-- [ ] Delete `beep/`, `tango/`, `imagenes-matilde/` and `Readme.txt` (about 53 MB of template copies).
-- [ ] Decide on `red/` (the canvas dot toy from 2018).
-- [ ] Close the 7 Dependabot PRs that target `beep/` and `tango/`.
+- [x] Delete `beep/` (except `beep/simaplaDigital/`), `tango/`, `red/`, `imagenes-matilde/` and `Readme.txt`.
+- [ ] `beep/simaplaDigital/` stays online with no link from the site, until Marcello is ready to wipe it.
+- [ ] Close the 11 Dependabot PRs that target `beep/` and `tango/`.
 - [ ] Remove unused files from the old link page: `assets/css/style.css`, and `assets/img/{bg.jpg,ig.png,ln.png,medium.png,website.png}`. Keep `pfp.jpg` if you want a photo later.
 - [ ] Old link-page extras are gone from the new page: Calendly, the "PRONTO" course, Instagram and Google Analytics. Add back anything you still want.
 
 ## To ship
 
-- [ ] Merge the branch into `master` and push. GitHub Pages then serves it on marcelloavila.com.
+- [x] Merge the branch into `master` and push. GitHub Pages then serves it on marcelloavila.com.
 - [ ] After the merge, check that `_notes/` and `_tools/` are not served (Jekyll skips folders starting with `_`).
 
 ## Done

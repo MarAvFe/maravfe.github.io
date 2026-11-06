@@ -1,6 +1,6 @@
 # marcelloavila.com — baseline
 
-Status: draft, nothing built yet. Old folders (`beep/`, `tango/`, `red/`, `imagenes-matilde/`) stay untouched until decided on desktop.
+Status: v1 shipped 2026-11-06. Old folders removed, except `beep/simaplaDigital/`, which stays online and unlinked.
 
 ## 1. Purpose
 
