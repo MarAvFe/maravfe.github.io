@@ -20,6 +20,14 @@
       "featured": true
     },
     {
+      "name": "Wheelborn",
+      "line": "An offline life-sim about young elemental shapers. Make a character, explore the town and learn all five elements. In English and Spanish.",
+      "theme": "play",
+      "status": "building",
+      "year": 2026,
+      "link": "https://marcelloavila.com/wheelborn/"
+    },
+    {
       "name": "rail-shooter",
       "line": "A calm, wordless flying game for a 4-year-old. You can't fail and you don't need to read.",
       "theme": "family",
