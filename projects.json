@@ -20,6 +20,15 @@
       "featured": true
     },
     {
+      "name": "Tapacaras",
+      "line": "Cover the faces in a photo with blur, pixels or a smiley before you share it. It runs in your browser, so the photo is never uploaded. In Spanish and English.",
+      "theme": "security",
+      "status": "shipped",
+      "year": 2026,
+      "repo": "https://github.com/MarAvFe/tapacaras",
+      "link": "https://marcelloavila.com/tapacaras/"
+    },
+    {
       "name": "Wheelborn",
       "line": "An offline life-sim about young elemental shapers. Make a character, explore the town and learn all five elements. In English and Spanish.",
       "theme": "play",
