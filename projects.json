@@ -27,7 +27,8 @@
       "year": 2026,
       "repo": "https://github.com/MarAvFe/tapacaras",
       "link": "https://marcelloavila.com/tapacaras/",
-      "featured": true
+      "featured": true,
+      "sprite": "tapacaras"
     },
     {
       "name": "Wheelborn",

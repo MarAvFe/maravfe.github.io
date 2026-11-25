@@ -13,6 +13,14 @@ const SPRITES = {
   play: ["...XX...", "...XX...", "XXXXXXXX", ".XXXXXX.", "..XXXX..", ".XXXXXX.", ".XX..XX.", "X......X"],
   tools: [".X.X....", ".XXX....", "..XXX...", "...XXX..", "....XXX.", ".....XXX", "......XX", "........"],
 };
+// Project sprites, picked with "sprite" in projects.json; each brings its own colours.
+const PROJECT_SPRITES = {
+  // Same 8x8 face as Tapacaras' favicon (tapacaras/tools/make_favicon.py).
+  tapacaras: {
+    map: ["..HHHH..", ".HHhHHH.", "HhSsSMhH", "HSDsMDsH", ".sSMSsM.", ".MsDDSs.", "..MsSM..", "...sM..."],
+    colours: { H: "#2a1a10", h: "#3b2416", S: "#b98262", s: "#a8714c", M: "#8d5a3b", D: "#4a2c1a" },
+  },
+};
 const THEME_COLOUR = { security: NES.y, family: NES.m, road: NES.o, dance: NES.m, community: NES.l, play: NES.y, tools: NES.p };
 
 // Rider on a naked bike, side view, facing right: blue tank, bare engine, stub tail,
@@ -52,10 +60,12 @@ function drawMap(ctx, map, x, y, colours) {
   }));
 }
 
-function spriteURL(theme) {
+function spriteURL(p) {
   const c = document.createElement("canvas");
   c.width = c.height = 8;
-  drawMap(c.getContext("2d"), SPRITES[theme] || SPRITES.play, 0, 0, { X: THEME_COLOUR[theme] || NES.p });
+  const own = PROJECT_SPRITES[p.sprite];
+  if (own) drawMap(c.getContext("2d"), own.map, 0, 0, own.colours);
+  else drawMap(c.getContext("2d"), SPRITES[p.theme] || SPRITES.play, 0, 0, { X: THEME_COLOUR[p.theme] || NES.p });
   return c.toDataURL();
 }
 
@@ -135,7 +145,7 @@ function render({ themes, projects }) {
   const featured = document.getElementById("featured");
   for (const p of projects.filter(p => p.featured)) {
     featured.append(el("li", { lang: p.lang },
-      el("img", { class: "sprite", src: spriteURL(p.theme), alt: "", width: 8, height: 8 }),
+      el("img", { class: "sprite", src: spriteURL(p), alt: "", width: 8, height: 8 }),
       el("h3", {}, p.name),
       el("p", {}, p.line),
       links(p)));
