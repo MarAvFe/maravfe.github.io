@@ -18,7 +18,7 @@ Last updated 2026-11-06. v1 is merged into `master` and pushed.
 
 ## Broken or missing
 
-- [ ] **infovia demo is down:** https://infovia.vercel.app returns 404, so the card links only to the code. Redeploy it, or mark it paused (it currently is).
+- [x] **infovia (Hay Baldazo)** removed from the project list on 2026-11-25 at Marcello's request; the repo is untouched.
 - [ ] **No screenshots yet.** Featured projects show 8×8 theme sprites instead. When a project has a screenshot, add a `"shot"` field (it isn't rendered yet, so ask me to wire it up).
 - [ ] **Short or missing READMEs:** processing-sketches and curious-for-speed (no README found locally), tap-n-watch (no code).
 

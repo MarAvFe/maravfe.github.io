@@ -48,15 +48,6 @@
       "featured": true
     },
     {
-      "name": "Hay Baldazo (infovia)",
-      "line": "Reportes de lluvia hechos por motociclistas en San José. Reporte su zona y vea el mapa.",
-      "lang": "es",
-      "theme": "road",
-      "status": "paused",
-      "year": 2026,
-      "repo": "https://github.com/MarAvFe/infovia"
-    },
-    {
       "name": "Enseñalsa",
       "line": "Learn the salsa basic one count at a time, with a little 3D dancer you can slow down.",
       "theme": "dance",
