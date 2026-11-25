@@ -26,7 +26,8 @@
       "status": "shipped",
       "year": 2026,
       "repo": "https://github.com/MarAvFe/tapacaras",
-      "link": "https://marcelloavila.com/tapacaras/"
+      "link": "https://marcelloavila.com/tapacaras/",
+      "featured": true
     },
     {
       "name": "Wheelborn",
@@ -52,8 +53,7 @@
       "theme": "road",
       "status": "paused",
       "year": 2026,
-      "repo": "https://github.com/MarAvFe/infovia",
-      "featured": true
+      "repo": "https://github.com/MarAvFe/infovia"
     },
     {
       "name": "Enseñalsa",

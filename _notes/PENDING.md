@@ -10,7 +10,7 @@ Last updated 2026-11-06. v1 is merged into `master` and pushed.
 
 ## Decisions waiting on you
 
-- [ ] **Featured three.** Currently provisional: Seguridad digital, rail-shooter, Hay Baldazo (infovia). Change them with the `"featured": true` flags in `projects.json`.
+- [ ] **Featured three.** Currently: Seguridad digital, Tapacaras, rail-shooter (Tapacaras replaced Hay Baldazo on 2026-11-25 at Marcello's request). Change them with the `"featured": true` flags in `projects.json`.
 - [ ] **Statuses are my guesses** (idea / building / shipped / paused). Correct them in `projects.json`. The ones I'm least sure about: rail-shooter, curious-for-speed, garmin-*, tap-n-watch.
 - [ ] **Left out on purpose: `busca-maes-bot`.** It looks people up by name and plate. That's public data in CR, but listing it on a privacy-minded homepage sends a mixed signal. Add it back if you disagree.
 - [ ] **Palestina x Costa Rica** is listed under Costa Rica. Keep it or drop it, your call.
